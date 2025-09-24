@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Stack{
+    public:
+    int arr[100];
+    //int size;
+    int top;
+
+    Stack(){
+        // this->size=size;
+        // arr=new int[size];
+        top=-1;
+    }
+
+    void push(int n){
+        top++;
+        arr[top]=n;
+        cout<<"ok"<<endl;
+    }
+
+    void pop(){
+        cout<<arr[top]<<endl;
+        top--;
+
+    }
+
+    void size(){
+        cout<<top+1<<endl;
+
+    }
+
+    void back(){
+        cout<<arr[top]<<endl;
+
+    }
+
+    void clear(){
+        top=-1;
+        cout<<"ok"<<endl;
+    }
+};
+
+int main(){
+    
+    Stack s;
+
+    string ans;
+    while(cin>>ans){
+        if(ans=="push"){
+            int n;
+            cin>>n;
+            s.push(n);
+        }
+
+        else if(ans=="pop"){
+            s.pop();
+        }
+
+        else if(ans=="back"){
+            s.back();
+        }
+
+        else if(ans=="size"){
+            s.size();
+        }
+
+        else if(ans=="clear"){
+            s.clear();
+        }
+
+        else if(ans=="exit"){
+            cout<<"bye"<<endl;
+            break;
+
+        }
+    }
+
+}
