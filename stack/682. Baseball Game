@@ -1,0 +1,39 @@
+class Solution {
+public:
+    int calPoints(vector<string>& o) {
+        stack<int>s;
+        int sum=0;
+
+        for(int i=0;i<o.size();i++){
+            if(o[i]=="C"){
+            sum-=s.top();
+            s.pop();
+            }
+
+            else if(o[i]=="D"){
+                int val=s.top();
+                s.push(val*2);
+                sum+=(val*2);
+                }
+
+            else if(o[i]=="+"){
+                int v1=s.top();
+                s.pop();
+                int v2=s.top();
+                s.push(v1);
+                s.push(v1+v2);
+                sum+=v1+v2;
+            }
+
+            else{
+                int n=stoi(o[i]);
+                s.push(n);
+                sum+=n;
+            }
+
+        }
+
+        return sum;  
+        
+          }
+};
