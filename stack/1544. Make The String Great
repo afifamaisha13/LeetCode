@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string makeGood(string s) {
+        string ne="";
+        stack<char>st;
+
+        for(auto ch:s){
+            if(!st.empty() && abs((st.top()-'a')-(ch-'a')) == 32)
+                st.pop();
+            
+            else
+                st.push(ch);
+        }
+
+        while(!st.empty()){
+            ne+=st.top();
+            st.pop();
+        }
+
+        reverse(ne.begin(),ne.end());
+
+        return ne;
+        
+    }
+};
