@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int smallestNumber(int n) {
+
+        int k=1;
+        while(true){
+
+            long long ans=(1<<k)-1;
+            if(ans>=n)
+            return (int)ans;
+            else
+            k++;
+        }
+        
+    }
+};
