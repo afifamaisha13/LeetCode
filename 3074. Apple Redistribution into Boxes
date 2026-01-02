@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int minimumBoxes(vector<int>& apple, vector<int>& capacity) {
+        sort(capacity.begin(),capacity.end());
+        reverse(capacity.begin(),capacity.end());
+        int sum=0;
+        for(int i=0;i<apple.size();i++)
+        sum+=apple[i];
+        int count=0;
+        int cap=0;
+        for(int j=0;j<capacity.size();j++){
+                cap+=capacity[j];
+                count++;
+                if(cap>=sum)
+                break;
+            }
+
+        return count;
+    }
+};
